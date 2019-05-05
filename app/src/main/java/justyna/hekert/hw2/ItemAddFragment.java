@@ -50,6 +50,8 @@ public class ItemAddFragment extends Fragment {
         if(takePic){
             TakePicture();
         }
+        
+        getActivity().findViewById(R.id.displayFragment).setVisibility(View.VISIBLE);
     }
 
 
@@ -93,7 +95,6 @@ public class ItemAddFragment extends Fragment {
         if (holdingActivity != null) {
             if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
                 ((AddItemActivity) holdingActivity).setImgPicPath(mCurrentPhotoPath);
-                getActivity().findViewById(R.id.displayFragment).setVisibility(View.VISIBLE);
             } else {
                 ((AddItemActivity) holdingActivity).PicTakenCancelled();
             }
